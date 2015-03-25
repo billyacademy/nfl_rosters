@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  root "conferences#index"
+  resources :conferences, only: [:index]
+  resources :teams, only: [:index]
+  resources :divisions, only: [:index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
