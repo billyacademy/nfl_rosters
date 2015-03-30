@@ -7,7 +7,7 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
-gem 'active_model_serializers'
+gem 'active_model_serializers', '~> 0.8.0'
 gem 'sqlite3'
 gem 'pry'
 
