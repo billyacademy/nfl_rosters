@@ -1,5 +1,6 @@
 class DivisionsController < ApplicationController
   def index
-    render json: Division.all
+    @divisions =  Division.all.as_json(include: { :conference => { only: :name }})
+    render json: JSON.pretty_generate(@divisions)
   end
 end
