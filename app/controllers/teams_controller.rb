@@ -1,6 +1,7 @@
 class TeamsController < ApplicationController
   def index
-    render json: Team.all
+    @teams = Team.all.as_json(include: { :division => { only: :name}}, except: [:created_at, :updated_at, :division_id])
+    render json: JSON.pretty_generate(@teams)
   end
 
   def show
